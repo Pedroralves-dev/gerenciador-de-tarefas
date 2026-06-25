@@ -31,7 +31,7 @@ tarefas = []
 # ===== AULA 1 — Fundação do sistema =====
 # =====================================================================
 
-def adicionar_tarefa(titulo, prioridade="mediaa"):
+def adicionar_tarefa(titulo, prioridade="mediaagit add ."):
     tarefas.append({'titulo':titulo,'concluda':False,'prioridade':prioridade})
     print(f'tarefa {titulo} adicionado ')
     
@@ -66,6 +66,14 @@ def listar_tarefas():
 # =====================================================================
 
 def concluir_tarefa(indice):
+    if indice < 1 or indice > len(tarefas):
+        print("Número de tarefas invalido")
+        return
+    else:
+        for index, itens in enumerate(tarefas, start=1):
+            if index == indice:
+                itens['Concluida'] = True
+                print(f'Tarefas{tarefas['Titulo']} concluido')
     """
     Marca como concluída a tarefa na posição `indice` (começando em 1).
 
@@ -87,6 +95,13 @@ def concluir_tarefa(indice):
 
 
 def remover_tarefa(indice):
+    if indice < 1 or indice > len(tarefas):
+        print('Número de tarefa invalido')
+    else:
+        for index in enumerate(tarefas, start=1):
+            tarefas.pop(index - 1)
+            print("Tarefas Removida")
+
     """
     Remove da lista a tarefa na posição `indice` (começando em 1).
 
