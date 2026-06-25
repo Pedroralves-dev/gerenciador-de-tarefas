@@ -31,7 +31,7 @@ tarefas = []
 # ===== AULA 1 — Fundação do sistema =====
 # =====================================================================
 
-def adicionar_tarefa(titulo, prioridade="media"):
+def adicionar_tarefa(titulo, prioridade="mediaa"):
     tarefas.append({'titulo':titulo,'concluda':False,'prioridade':prioridade})
     print(f'tarefa {titulo} adicionado ')
     
@@ -40,6 +40,8 @@ def adicionar_tarefa(titulo, prioridade="media"):
 
 
 def listar_tarefas():
+    for index, intens in enumerate(tarefas, start=1):
+        print(f'{index} - {intens['titulo']}')
     """
     Exibe todas as tarefas cadastradas na lista `tarefas`.
 
